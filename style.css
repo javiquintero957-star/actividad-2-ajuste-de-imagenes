@@ -1,1 +1,56 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 40px 20px; /* más espacio arriba y lados */
+}
 
+/* 🔥 CONTENEDOR GRID */
+#list-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px; /* espacio interno */
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* 🔥 más separación entre cartas */
+}
+
+/* CARD */
+.row-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px; /* más suave */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.row-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.row-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* 📱 TABLET */
+@media (max-width: 1024px) {
+    #list-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* 📱 MÓVIL */
+@media (max-width: 480px) {
+    #list-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
